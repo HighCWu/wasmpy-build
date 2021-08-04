@@ -26,4 +26,4 @@ jobs:
           python-version: 3.8
           
       - name: Run a one-line script
-        run: sh test_cython.sh
+        run: bash test_cython.sh
