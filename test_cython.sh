@@ -1,5 +1,5 @@
 apt-get install wabt
-pip3 install wasmpy-build
+pip3 install Cython wasmpy-build
 
 # Get the emsdk repo
 git clone https://github.com/emscripten-core/emsdk.git
