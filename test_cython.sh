@@ -21,7 +21,7 @@ source ./emsdk_env.sh
 
 cd ../
 
-cython add.py
+cython -X language_level=3 add.py
 
 python3 -m wasmpy_build -o add_wasm.wasm add.c
 
