@@ -1,4 +1,4 @@
-apt-get install wabt
+sudo apt-get install wabt
 pip3 install Cython wasmpy-build
 
 # Get the emsdk repo
@@ -23,7 +23,7 @@ cd ../
 
 cython add.py
 
-python3 -m wasmpy_build -o add_wasm.wasm
+python3 -m wasmpy_build -o add_wasm.wasm add.c
 
 wasm2c add_wasm.wasm -o add_wasm.c
 
