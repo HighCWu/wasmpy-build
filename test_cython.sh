@@ -25,9 +25,13 @@ cython -X language_level=3 add.py
 
 python3 -m wasmpy_build -o add_wasm.wasm add.c
 
+git clone https://github.com/WebAssembly/wabt
+
+cp wabt/wasm2c/wasm-rt* ./
+
 wasm2c add_wasm.wasm -o add_wasm.c
 
 clang -shared -pthread -fPIC -fwrapv -O2 -Wall -fno-strict-aliasing \
-      -I/usr/include/python3.8 -o add_wasm.cpython-38m-x86_64-linux-gnu.so add_wasm.c
+      -I/usr/include/python3.8 -o add_wasm.cpython-38m-x86_64-linux-gnu.so add_wasm.c wasm-rt-impl.c
 
 python3 call_pyd.py
