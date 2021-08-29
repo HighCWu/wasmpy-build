@@ -27,4 +27,4 @@ wget https://raw.githubusercontent.com/WebAssembly/wabt/1.0.24/wasm2c/wasm-rt-im
 wget https://raw.githubusercontent.com/WebAssembly/wabt/1.0.24/wasm2c/wasm-rt-impl.c
 
 # Compile (error now)
-$CC -o main main.c
+clang -o main wasm-rt-impl.c ../wasi-impl.c main.c -I../
